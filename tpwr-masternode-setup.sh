@@ -223,7 +223,7 @@ function prepare_system() {
   export LC_ALL="en_US.UTF-8" >/dev/null 2>&1
   export LC_CTYPE="en_US.UTF-8" >/dev/null 2>&1
   locale-gen --purge >/dev/null 2>&1
-  apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && apt autoremove --purge >/dev/null 2>&1
+  apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && apt autoremove -y --purge >/dev/null 2>&1
   if [ "$?" -gt "0" ];
     then
       echo -e "----------------------------------------------------------------------------------------------------------------------------------"
@@ -316,7 +316,7 @@ function update_cleanup() {
   rm -rf /root/.tpwr/sporks >/dev/null 2>&1 && rm -rf /root/.tpwr/backups >/dev/null 2>&1 && rm -rf /root/.tpwr/banlist.dat >/dev/null 2>&1 
   rm /root/.tpwr/debug.log >/dev/null 2>&1 && rm /root/.tpwr/wallet.dat >/dev/null 2>&1 && rm /root/.tpwr/tpwrd >/dev/null 2>&1 && rm /root/.tpwr/tpwr-cli >/dev/null 2>&1
   rm /etc/systemd/system/tpwr-core.service
-  apt autoremove --purge >/dev/null 2>&1
+  apt autoremove -y --purge >/dev/null 2>&1
   echo -e "${GREEN}Cleaned all old stuff...${NC}";
   clear
 }
