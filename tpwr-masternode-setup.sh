@@ -3,9 +3,9 @@
 # Copyright (c) 2018-2020 The GOSSIP developers
 # Copyright (c) 2020-2020 The TPWR developers
 
-REPO='https://github.com/tpowercoin/tpwr-core/releases/download/v1.0.0/tpwr-1.0.0-x86_64-linux-gnu.zip'
-ARCHIVE='tpwr-1.0.0-x86_64-linux-gnu.zip'
-FOLDER='tpwr-1.0.0-x86_64-linux-gnu'
+REPO='https://github.com/tpowercoin/tpwr-core/releases/download/v1.0.1/tpwr-1.0.1-x86_64-linux-gnu.zip'
+ARCHIVE='tpwr-1.0.1-x86_64-linux-gnu.zip'
+FOLDER='tpwr-1.0.1-x86_64-linux-gnu'
 NODEIP=$(curl -s4 icanhazip.com)
 
 RED='\033[0;31m'
@@ -187,7 +187,7 @@ clear
 }
 
 function checks() {
-  if [[ $(lsb_release -d) == *16.04* || *18.04* || *18.10* || *19.04* || *19.10* || *20.04* ]]; then
+  if [[ $(lsb_release -d) == *16.04* || *18.04* || *18.10* || *19.04* || *19.10* ]]; then
     UBUNTU_VERSION=OK
     else
       echo -e "------------------------------------------------------------------------------------------"
