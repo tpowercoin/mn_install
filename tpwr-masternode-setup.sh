@@ -3,9 +3,9 @@
 # Copyright (c) 2018-2020 The GOSSIP developers
 # Copyright (c) 2020-2020 The TPWR developers
 
-REPO='https://github.com/tpowercoin/tpwr-core/releases/download/v1.0.1/tpwr-1.0.1-x86_64-linux-gnu.zip'
-ARCHIVE='tpwr-1.0.1-x86_64-linux-gnu.zip'
-FOLDER='tpwr-1.0.1-x86_64-linux-gnu'
+REPO='https://github.com/tpowercoin/tpwr-core/releases/download/v1.1.0/tpwr_v1.1.0_linux_amd64_cli.tar.gz'
+ARCHIVE='tpwr_v1.1.0_linux_amd64_cli.tar.gz'
+FOLDER='tpwr_v1.1.0_linux_amd64_cli'
 NODEIP=$(curl -s4 icanhazip.com)
 
 RED='\033[0;31m'
@@ -64,7 +64,7 @@ function download_node() {
   echo -e "Download ${YELLOW}TPWR Wallet${NC}"
   cd /root/ >/dev/null 2>&1
   wget -c $REPO >/dev/null 2>&1
-  unzip -j $ARCHIVE >/dev/null 2>&1
+  tar -xvzf $ARCHIVE >/dev/null 2>&1
   cp tpwrd /usr/local/bin/ && cp tpwr-cli /usr/local/bin/ >/dev/null 2>&1
   rm -rf tpwr* >/dev/null 2>&1
   cp /usr/local/bin/tpwr-cli /root/ >/dev/null 2>&1
